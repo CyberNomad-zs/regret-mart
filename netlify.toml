@@ -1,0 +1,13 @@
+# https://docs.netlify.com/integrations/frameworks/next-js/overview/
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # 与 package.json 的 engines 一致，避免旧 Node 导致构建失败
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# 说明：本项目的「内存店铺」在 Serverless 上每个实例独立、无持久化；
+# 演示/投票够用。要跨请求持久化需接数据库（如 Supabase）。
