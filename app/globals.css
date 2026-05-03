@@ -1,0 +1,104 @@
+@import url("https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 20% 0%, #fef0f3 0%, transparent 35%),
+    radial-gradient(circle at 90% 10%, #eef4fb 0%, transparent 30%),
+    linear-gradient(180deg, #fdf9f3 0%, #fbf3e7 100%);
+  background-attachment: fixed;
+  color: #2c2828;
+  font-family: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .pill-card {
+    position: relative;
+    border-radius: 1.25rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fff8f5 100%);
+    border: 1px solid rgba(214, 59, 101, 0.18);
+    box-shadow: 0 8px 24px -16px rgba(214, 59, 101, 0.45), 0 1px 0 rgba(0, 0, 0, 0.02);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .pill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px -18px rgba(214, 59, 101, 0.5), 0 1px 0 rgba(0, 0, 0, 0.02);
+  }
+
+  .prescription-paper {
+    background:
+      linear-gradient(180deg, #ffffff 0%, #fdfbf6 100%),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(58, 109, 169, 0.08) 27px, rgba(58, 109, 169, 0.08) 28px);
+    border: 1px solid rgba(58, 109, 169, 0.18);
+    border-radius: 1rem;
+    box-shadow: 0 4px 14px -8px rgba(58, 109, 169, 0.25);
+  }
+
+  .pill-shape {
+    background: var(--pill-color, #f1839f);
+    box-shadow: inset 0 -8px 16px rgba(0, 0, 0, 0.12), inset 0 8px 16px rgba(255, 255, 255, 0.45),
+      0 8px 20px -8px var(--pill-color, #f1839f);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-rx-200 bg-rx-50 px-2.5 py-0.5 text-xs text-rx-700;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-pill-500 text-white shadow-pill hover:bg-pill-600 active:translate-y-[1px];
+  }
+  .btn-ghost {
+    @apply btn border border-rx-200 bg-white/70 text-rx-700 hover:bg-rx-50;
+  }
+  .btn-soft {
+    @apply btn bg-cream-100 text-ink-800 hover:bg-cream-200;
+  }
+
+  .seal {
+    color: #d63b65;
+    border: 2px solid #d63b65;
+    border-radius: 9999px;
+    padding: 0.15rem 0.6rem;
+    font-family: var(--font-kai, "LXGW WenKai", serif);
+    transform: rotate(-8deg);
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.font-kai {
+  font-family: "LXGW WenKai", "霞鹜文楷", KaiTi, STKaiti, serif;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+@keyframes flipReveal {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
